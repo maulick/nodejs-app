@@ -26,7 +26,7 @@ pipeline {
         }
         stage('upload to s3'){
           steps {
-            sh 'aws s3 cp $GIT_COMMIT.zip s3://deploymasters-nodejs'
+            sh 'aws s3 cp $GIT_COMMIT.zip s3://deploymasters-node'
            }
         }
     }
