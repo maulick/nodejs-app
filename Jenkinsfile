@@ -24,9 +24,9 @@ pipeline {
             step(
               [
                 $class: 'AWSCodeDeployPublisher', 
-                applicationName: 'nodejs-application', 
+                applicationName: 'nodejs-app', 
                 deploymentGroupAppspec: false, 
-                deploymentGroupName: 'nodejs-application-DG', 
+                deploymentGroupName: 'nodejs-app-deploy-grp', 
                 excludes: '', 
                 iamRoleArn: '', 
                 includes: 'dist/', 
