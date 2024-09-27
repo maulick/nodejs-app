@@ -42,13 +42,5 @@ pipeline {
               )
           }
         }
-        stage('Print Build ID & Build Number') {
-      steps {
-        script {
-          echo "The build ID is: ${env.BUILD_ID}"
-          echo "The build Number is: ${env.BUILD_NUMBER}"
-        }
-      }
-        }
     }
 }
