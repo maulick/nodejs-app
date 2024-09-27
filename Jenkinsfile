@@ -19,7 +19,7 @@ pipeline {
         sh 'npm run build'
       }
         }
-        stage('codedeploy') {
+        stage('Code Deploy to EC2') {
           steps {
             step(
               [
