@@ -24,9 +24,9 @@ pipeline {
             step(
               [
                 $class: 'AWSCodeDeployPublisher', 
-                applicationName: 'nodejs-app', 
+                applicationName: 'nodejs-application', 
                 deploymentGroupAppspec: false, 
-                deploymentGroupName: 'nodejs-app-deploy-grp', 
+                deploymentGroupName: 'nodejs-application-DG', 
                 excludes: '', 
                 iamRoleArn: '', 
                 includes: 'dist/', 
@@ -41,6 +41,14 @@ pipeline {
                 ]
               )
            }
+        }
+        stage('Print Build ID & Build Number') {
+            steps {
+                script {
+                    echo "The build ID is: ${env.BUILD_ID}"
+                    echo "The build Number is: ${env.BUILD_NUMBER}"
+                }
+            }
         }
     }
 }
